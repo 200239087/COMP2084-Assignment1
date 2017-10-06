@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Consoles";
+}
+
+@model IEnumerable<COMP2084_Assignment1.Models.console>
+
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Select a console to view the games for it.</p>
+
+<ul>
+    @foreach (var c in Model)
+    {
+        <li>@Html.ActionLink(c.name, "Games", "Home", new { console = c.name }, null)</li>
+    }
+</ul>
